@@ -102,6 +102,6 @@ class Cart:
                 raise ValueError("Недостаточно товаров на складе")
             elif product.check_quantity(self.products[product]):
                 product.buy(self.products[product])
-                self.products[product] = self.products[product] - quantity
+                self.clear()
             else:
                 raise NotImplementedError
