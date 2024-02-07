@@ -92,7 +92,6 @@ class TestCart:
         cart.add_product(product, 15)
         assert cart.products[product] == 20
         assert len(cart.products) == 1
-        #assert product == Product("book", 100, "This is a book", 980)
         pass
 
     def test_remove_product_without_remove_count(self, cart):
@@ -155,8 +154,8 @@ class TestCart:
         }
         assert cart.products[product] == 20
         cart.buy()
-        assert product.quantity == 980 # проверка склада
-        assert cart.products[product] == 0 # проверка корзины
+        assert product.quantity == 980  # проверка склада
+        assert cart.products[product] == 0  # проверка корзины
         pass
 
     def test_buy_more_than_have(self, cart):
@@ -167,9 +166,6 @@ class TestCart:
         assert cart.products[product] == 120
         with pytest.raises(ValueError):
             cart.buy()
-        assert product.quantity == 100 # проверка склада
-        assert cart.products[product] == 120 # проверка корзины
+        assert product.quantity == 100  # проверка склада
+        assert cart.products[product] == 120  # проверка корзины
         pass
-
-
-
